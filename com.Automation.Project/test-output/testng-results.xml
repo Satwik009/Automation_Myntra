@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="7616" started-at="2018-01-26T09:46:12Z" finished-at="2018-01-26T09:46:19Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="7616" started-at="2018-01-26T09:46:12Z" finished-at="2018-01-26T09:46:19Z">
+      <class name="com.Automation.Script.Registration">
+        <test-method status="PASS" signature="launchApp()[pri:0, instance:com.Automation.Script.Registration@31610302]" name="launchApp" is-config="true" duration-ms="4959" started-at="2018-01-26T15:16:12Z" finished-at="2018-01-26T15:16:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method status="PASS" signature="registrationmethod()[pri:0, instance:com.Automation.Script.Registration@31610302]" name="registrationmethod" duration-ms="2642" started-at="2018-01-26T15:16:17Z" finished-at="2018-01-26T15:16:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationmethod -->
+        <test-method status="PASS" signature="End()[pri:0, instance:com.Automation.Script.Registration@31610302]" name="End" is-config="true" duration-ms="1" started-at="2018-01-26T15:16:19Z" finished-at="2018-01-26T15:16:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- End -->
+      </class> <!-- com.Automation.Script.Registration -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
