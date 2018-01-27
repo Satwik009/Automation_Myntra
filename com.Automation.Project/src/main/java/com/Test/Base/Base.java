@@ -24,51 +24,47 @@ import org.testng.annotations.Test;
 import com.Test.Utils.Utils;
 
 public class Base {
-	  public static  WebDriver driver;
-	  
-  	@BeforeTest
-	public  static void launchApp() throws IOException
-	{
-	String browser_type= 
-  Utils.loadPropertyFile("/Users/satwik/Documents/Workspace/com.Automation.Project/ConfigurationFiles/Application.properties", "browser_type"); 
-    String url = 
-  Utils.loadPropertyFile("/Users/satwik/Documents/Workspace/com.Automation.Project/ConfigurationFiles/Application.properties", "url");
-	
-        if(browser_type.equalsIgnoreCase("ie"))                                     
-			{                                       
-                 System.setProperty("webdriver.ie.driver","Drivers/IEDriverServer");	
-	     driver = new InternetExplorerDriver();
-	     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	 	 driver.get(url);
-	     driver.manage().window().maximize();
-	}
-	else 	if(browser_type.equalsIgnoreCase("chrome"))                                     
+	public static WebDriver driver;
 
-   {                      
-		         System.setProperty("webdriver.chrome.driver","Drivers/chromedriver");
-         driver = new ChromeDriver();
-     	 driver.get(url);
-     	WebDriverWait wait = new WebDriverWait(driver, 20);
-     	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//DIV[@class='desktop-userIconsContainer']")));
-   }
-        
-	else 	if(browser_type.equalsIgnoreCase("mozila"))  
-	{   
-		System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"false");
-	driver = new FirefoxDriver();
-	driver.get(url);
-	   driver.manage().window().maximize();	
-	   
-	}
-	
+	@BeforeTest
+	public static void launchApp() throws IOException {
+		String browser_type = Utils.loadPropertyFile(
+				System.getProperty("user.dir") + "/ConfigurationFiles/Application.properties",
+				"browser_type");
+		String url = Utils.loadPropertyFile(
+				System.getProperty("user.dir") + "/ConfigurationFiles/Application.properties",
+				"url");
+
+		if (browser_type.equalsIgnoreCase("ie")) {
+			System.setProperty("webdriver.ie.driver", "Drivers/IEDriverServer");
+			driver = new InternetExplorerDriver();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get(url);
+			driver.manage().window().maximize();
+		} else if (browser_type.equalsIgnoreCase("chrome"))
+
+		{
+			System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+			driver = new ChromeDriver();
+			driver.get(url);
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//DIV[@class='desktop-userIconsContainer']")));
+		}
+
+		else if (browser_type.equalsIgnoreCase("mozila")) {
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "false");
+			driver = new FirefoxDriver();
+			driver.get(url);
+			driver.manage().window().maximize();
+		}
 	}
 
-@AfterTest
-public void End()
-{
-//{
-//	 driver.quit();
-//}
-	
-}
+	@AfterTest
+	public void End() {
+		 {
+		 driver.quit();
+		}
+
+	}
 }

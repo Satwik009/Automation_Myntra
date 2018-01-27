@@ -13,32 +13,29 @@ import com.Test.UiPages.Reg;
 
 public class Generic extends Base {
 
-	
 	public Generic(final WebDriver driver) {
-		Base.driver= driver ;
-	  }
+		Base.driver = driver;
+	}
 
-	public void selectDropdown(String value , String Text)
-     {
-	Select obj = new Select(driver.findElement(By.name(value)));
-	obj.selectByVisibleText(Text);
+	public void selectDropdown(String value, String Text) {
+		Select obj = new Select(driver.findElement(By.name(value)));
+		obj.selectByVisibleText(Text);
 	}
-	
-	public void dragAndDrop(WebElement srcElement , WebElement disElement)
-	{
-		Actions action = new Actions(driver) ;
-		action.dragAndDrop(srcElement, disElement) ;
+
+	public void dragAndDrop(WebElement srcElement, WebElement disElement) {
+		Actions action = new Actions(driver);
+		action.dragAndDrop(srcElement, disElement);
 	}
-	
-	 // Click webelement using javascript
-//	  public void clickWebElement() {
-//	  //  WebElement element =  ;
-//	    JavascriptExecutor executor = (JavascriptExecutor) driver;
-//	    executor.executeScript("arguments[0].click();", element);
-//	  }
-	  
-	  public void clickWebElementThroughJS(WebElement element) {
-		    JavascriptExecutor executor = (JavascriptExecutor) driver;
-		    executor.executeScript("arguments[0].click();", element);
-		  }
+
+	// Click webelement using javascript
+	// public void clickWebElement() {
+	// // WebElement element = ;
+	// JavascriptExecutor executor = (JavascriptExecutor) driver;
+	// executor.executeScript("arguments[0].click();", element);
+	// }
+
+	public void clickWebElementThroughJS(WebElement element) {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", element);
+	}
 }
