@@ -26,7 +26,7 @@ import com.Test.Utils.Utils;
 public class Base {
 	public static WebDriver driver;
 
-	@BeforeTest
+	@BeforeClass
 	public static void launchApp() throws IOException {
 		String browser_type = Utils.loadPropertyFile(
 				System.getProperty("user.dir") + "/ConfigurationFiles/Application.properties",
@@ -60,7 +60,7 @@ public class Base {
 		}
 	}
 
-	@AfterTest
+	@AfterClass
 	public void End() {
 		 {
 		 driver.quit();
